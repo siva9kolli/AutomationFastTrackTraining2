@@ -13,7 +13,7 @@ public class SimpleTest {
     }
 
     public String getWelcomeMessage(){
-        return "Welcome Admin";
+        return s;
     }
 
     public int totalValue(){
