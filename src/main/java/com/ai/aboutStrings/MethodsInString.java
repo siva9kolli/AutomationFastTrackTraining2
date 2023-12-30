@@ -1,4 +1,4 @@
-package com.ai.aboutArrays;
+package com.ai.aboutStrings;
 
 public class MethodsInString {
     public static void main(String[] args) {
