@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name="bs" value="Firefox"></parameter>
+    <test name="ParamsTest">
+        <parameter name="username" value="Selenium"></parameter>
+        <parameter name="password" value="Appium@12345"></parameter>
+        <classes>
+            <class name="com.ai.testNG.SendDataFromTestNGXML">
+            </class>
+        </classes>
+    </test>
+</suite>
