@@ -1,5 +1,6 @@
 package com.ai.testNG;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.sql.SQLOutput;
