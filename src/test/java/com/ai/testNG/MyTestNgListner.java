@@ -15,6 +15,7 @@ public class MyTestNgListner implements ITestListener {
         System.out.println("onTestFailure");
     }
 
+    @Override
     public void onTestSkipped(ITestResult result) {
         System.out.println("onTestSkipped");
     }

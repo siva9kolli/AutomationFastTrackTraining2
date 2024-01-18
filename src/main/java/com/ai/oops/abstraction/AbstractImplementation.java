@@ -1,5 +1,6 @@
 package com.ai.oops.abstraction;
 
+//Like Remote WebDriver
 public class AbstractImplementation extends AbstractMain{
 
     @Override
