@@ -5,7 +5,8 @@ public class FirstClass {
     /*
     - class name : start with Uppercase
     - ex: TestAutomation
-    -
+    - method name: starts with lowerCase
+    - ex: loginAsAdmin
      */
     public void testA(){
         System.out.println("TestA Pass");
