@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,7 +12,8 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class MultipleElements {
+public class VerificationMethodsInSelenium extends CommonActions{
+
     WebDriver driver;
 
     @BeforeClass
@@ -19,7 +21,7 @@ public class MultipleElements {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://the-internet.herokuapp.com/");
+        driver.get("https://www.salesforce.com/in/form/signup/freetrial-sales/?d=topnav2-btn-ft");
     }
 
     @AfterTest
@@ -29,15 +31,15 @@ public class MultipleElements {
 
     @Test
     public void verifyElementsPresentOnthePage(){
-        List<WebElement> addButton = driver.findElements(By.partialLinkText("Add"));
-        System.out.println(addButton.size());
-        addButton.get(0).click();
+        WebElement startMyFreeTrainButton = driver.findElement(By.name("start my free trial"));
+        List<WebElement> startMyFreeTrainButtons = driver.findElements(By.name("start my free trial"));
 
-        for (int i=0; i<5; i++){
-            driver.findElement(By.xpath("//*[text()='Add Element']")).click();
-        }
+       Assert.assertTrue(startMyFreeTrainButton.isDisplayed());
+       Assert.assertEquals(startMyFreeTrainButtons.size(), 1);
 
-        List<WebElement> deleteButtons = driver.findElements(By.xpath("//*[text()='Delete']"));
-        System.out.println("deleteButtons :: " + deleteButtons.size());
+
     }
+
+
+
 }
