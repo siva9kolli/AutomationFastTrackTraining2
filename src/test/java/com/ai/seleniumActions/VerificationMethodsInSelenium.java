@@ -37,6 +37,13 @@ public class VerificationMethodsInSelenium extends CommonActions{
        Assert.assertTrue(startMyFreeTrainButton.isDisplayed());
        Assert.assertEquals(startMyFreeTrainButtons.size(), 1);
 
+       WebElement agreementCheckBox = driver.findElement(By.xpath("//div[starts-with(@id,'SubscriptionAgreement')]/preceding-sibling::div"));
+       System.out.println("Before click :: "+agreementCheckBox.isSelected());
+
+        agreementCheckBox.click();
+        System.out.println("After click :: "+agreementCheckBox.isSelected());
+
+
 
     }
 
