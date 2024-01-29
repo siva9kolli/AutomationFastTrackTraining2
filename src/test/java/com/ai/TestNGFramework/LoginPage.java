@@ -8,8 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     private WebDriver driver;
+    public SeleniumActions seleniumActions;
 
     public LoginPage(WebDriver driver){
+        seleniumActions = new SeleniumActions();
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -33,10 +35,11 @@ public class LoginPage {
         driver.findElement(loginButton).click();
     }
 
-    public void login(String username, String passsord){
-        usernameInputBox.sendKeys(username);
-        passwordInputBox.sendKeys(passsord);
-        submitButton.click();
+    public void login(String username, String password){
+        seleniumActions.typeValue(usernameInputBox, username);
+        seleniumActions.typeValue(passwordInputBox, password);
+        seleniumActions.clickOnWebElement(submitButton);
     }
+
 
 }
