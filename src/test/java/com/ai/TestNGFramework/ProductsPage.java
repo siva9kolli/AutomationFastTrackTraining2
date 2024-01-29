@@ -16,6 +16,12 @@ public class ProductsPage {
     @FindBy(css = ".app_logo")
     private WebElement productsHeading;
 
+    @FindBy(css = ".bm-burger-button")
+    private WebElement hamburgerMenu;
+
+    @FindBy(css = "#logout_sidebar_link")
+    private WebElement logoutLink;
+
     public boolean verifyProductsPageHeading(){
         return productsHeading.isDisplayed();
     }
@@ -26,5 +32,10 @@ public class ProductsPage {
 
     public int getNumberOfSwagHeadings(){
         return driver.findElements(By.cssSelector(".app_logo")).size();
+    }
+
+    public void logOut(){
+        hamburgerMenu.click();
+        logoutLink.click();
     }
 }
