@@ -1,9 +1,6 @@
 package com.ai.seleniumActions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -51,5 +48,14 @@ public class MultipleWindows {
         driver.close(); // closing 2nd window
         driver.switchTo().window(parentWindowId);
         Assert.assertTrue(twitterLogo.isDisplayed());
+     }
+
+     @Test
+    public void openNewWindowOrTab(){
+        driver.switchTo().newWindow(WindowType.WINDOW);
+        driver.get("https://www.linkedin.com/feed/");
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://twitter.com/");
+         System.out.println("");
      }
 }
